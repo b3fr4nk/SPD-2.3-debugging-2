@@ -52,4 +52,24 @@ Fix: change 'requested_units' to 'units'
 
 ## Exercise 3
 
-[[Your answer goes here!]]
+Expected: List of nums is: [9, 7, 6, 5, 4, 3, 2, 1]
+Actual: IndexError on line 37 utils.py
+
+divide and conquer starting on line 3
+
+Assumption: i and j index variables are correctly used
+Result of experiment: on line 36 i was used instead of j causing index out of bounds
+
+new bug: TypeError: list indices must be integers or slices, not float on line 50 in utils.py
+
+I used divide and conquer
+
+Assumption: mid variable only stores an int
+Result of experiment: mid point will store a float when division by 2 results in a fraction. replace regular division with floor division on line 47
+
+new bug: replaces second last element in the sorted array with the last Actual: [9, 7, 6, 5, 4, 3, 2, 2] Expected: [9, 7, 6, 5, 4, 3, 2, 1]
+
+I used divide and conquer
+
+Assumption: new elements are being added to the array in the correct spot
+Result of experiment: variable was not being incremented after each addition to the array therefore it was overwriting previous additions instead of adding new ones
